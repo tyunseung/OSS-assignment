@@ -26,3 +26,10 @@ pred = MLP.predict(X_test)
 acc = accuracy_score(y_test, pred)
 
 print(acc)
+
+for i in range(30):
+  sample = X_test[i].reshape(1, -1)
+
+  result = MLP.predict(sample)
+
+  print("예측 : ", result[0], "실제 : ", y_test[i])
