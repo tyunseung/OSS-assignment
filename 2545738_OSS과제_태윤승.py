@@ -9,12 +9,12 @@ X = wine.data
 y = wine.target
 
 #분할
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=7)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 
 print(X_train.shape)
 print(X_test.shape)
 
-MLP = MLPClassifier(hidden_layer_sizes=(128, 64, 32, 16), activation='relu', max_iter=500, random_state=7)
+MLP = MLPClassifier(hidden_layer_sizes=(64, 32, 16), activation='relu', max_iter=500, random_state=1234)
 
 #학습
 MLP.fit(X_train, y_train)
